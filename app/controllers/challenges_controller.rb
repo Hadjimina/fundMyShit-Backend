@@ -23,8 +23,8 @@ class ChallengesController < ApplicationController
 
   def create
     @challenge = Challenge.new
-    @challenge.title = params[:title]
-    @challenge.description = params[:description]
+    @challenge.title = params[:title].gsub('+',' ')
+    @challenge.description = params[:description].gsub('+',' ')
     @challenge.price = params[:price]
     @challenge.challenger_id = params[:user_id]
     @challenge.save!
