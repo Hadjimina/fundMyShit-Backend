@@ -4,6 +4,9 @@ class Challenge < ApplicationRecord
 
   def add_current_price
     self.current_price = self.payments.map(&:amount).reduce(:+)
+    if self.current_price == nil
+      self.current_price = 0
+    end
     self
   end
 
