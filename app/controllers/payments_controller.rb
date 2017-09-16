@@ -6,6 +6,9 @@ class PaymentsController < ApplicationController
     @payment.payer_id = params[:payer_id]
     @payment.save!
 
+    @user = User.find_by_id(payer_id)
+    @user.update_attributes(balance: @user.balance - @payment.amount )
+
     render json: 1
   end
 end
