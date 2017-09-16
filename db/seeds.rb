@@ -8,7 +8,7 @@
 
 
 10.times do
-  User.create(email: Faker::Internet.email, username: Faker::Name.name, password: 123)
+  User.create(email: Faker::Internet.email, username: Faker::Name.name, password: 123, balance: rand(100))
 end
 
 

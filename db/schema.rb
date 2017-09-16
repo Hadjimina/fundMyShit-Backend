@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170915212546) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "username"
+    t.integer  "balance"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     @user.username = params[:username]
     @user.password = params[:password_hash]
+    @user.balance = 1000
     if @user.save!
       response = @user.id
     else
