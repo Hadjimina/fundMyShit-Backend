@@ -14,8 +14,8 @@ get 'users/:user_id/challenges', to: 'challenges#user_challenges'
 
 get '/payments/:user_id/payed_challenges', to: 'challenges#payed_challenges'
 
-get 'login', to: 'sessions#login'
+post 'login', to: 'sessions#login'
 
-put 'challenges/:id/add_video', to: 'challenges#add_video'
+post 'challenges/:id/add_video', to: 'challenges#add_video'
 
 end
