@@ -41,7 +41,7 @@ class ChallengesController < ApplicationController
       challenge.check_completed
     end
 
-      @challenges =  @challenges.sort_by { |a| a.complete ? 0 : 1 }
+      # @challenges =  @challenges.sort_by { |a| a.complete ? 0 : 1 }
 
       render json: @challenges
   end
@@ -55,7 +55,7 @@ class ChallengesController < ApplicationController
       challenge.check_completed
     end
 
-      @challenges =  @challenges.sort_by { |a| a.complete ? 0 : 1 }
+      # @challenges =  @challenges.sort_by { |a| a.complete ? 0 : 1 }
 
 
       render json: @challenges
