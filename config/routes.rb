@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 resources :challenges, only: [:index, :show, :create]
 
 
-resources :users, only: [:show] do
-    resources :challenges, only: [:create]
-end
+resources :users, only: [:show, :create]
+
+resources :payments, only: :create
 
 get 'users/:user_id/challenges', to: 'challenges#user_challenges'
 
