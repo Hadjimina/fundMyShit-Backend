@@ -6,6 +6,7 @@ class CreateChallenges < ActiveRecord::Migration[5.0]
       t.integer :price
       t.integer :current_price
       t.integer :challenger_id
+      t.string :video
       t.boolean :completed
 
       t.timestamps

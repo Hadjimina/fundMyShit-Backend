@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170915212546) do
     t.integer  "price"
     t.integer  "current_price"
     t.integer  "challenger_id"
+    t.string   "video"
     t.boolean  "completed"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

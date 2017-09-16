@@ -16,4 +16,6 @@ get '/payments/:user_id/payed_challenges', to: 'challenges#payed_challenges'
 
 get 'login', to: 'session#login'
 
+put 'challenges/:id/add_video', to: 'challenges#add_video'
+
 end

@@ -15,4 +15,8 @@ class Challenge < ApplicationRecord
     end
     self
   end
+
+  def age
+    ( DateTime.parse(self.updated_at.to_s).day - DateTime.now.day)
+  end
 end

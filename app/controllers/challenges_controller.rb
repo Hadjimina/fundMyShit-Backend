@@ -1,11 +1,14 @@
 class ChallengesController < ApplicationController
+  include ChallengesHelper
   def index
+    ChallengesHelper.delete_old_challenges
     @challenges = Challenge.all
 
     @challenges = @challenges.map do |challenge|
       challenge.add_current_price
       challenge.check_completed
     end
+
 
     render json: @challenges
   end
@@ -37,6 +40,9 @@ class ChallengesController < ApplicationController
       challenge.add_current_price
       challenge.check_completed
     end
+
+      @challenges =  @challenges.sort_by { |a| a.complete ? 0 : 1 }
+
       render json: @challenges
   end
 
@@ -48,7 +54,19 @@ class ChallengesController < ApplicationController
       challenge.add_current_price
       challenge.check_completed
     end
+
+      @challenges =  @challenges.sort_by { |a| a.complete ? 0 : 1 }
+
+
       render json: @challenges
-      
+
   end
+
+  def add_video
+    @challenge = Challenge.find_by_id(params[:id])
+    @challenge.update(video: params[:video])
+
+    render json: 1
+  end
+
 end
