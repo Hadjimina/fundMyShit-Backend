@@ -27,7 +27,6 @@ class ChallengesController < ApplicationController
     @challenge.description = params[:description]
     @challenge.price = params[:price]
     @challenge.challenger_id = params[:user_id]
-    render json: @challenge
     @challenge.save!
 
     render json: 1
