@@ -26,7 +26,7 @@ class ChallengesController < ApplicationController
     @challenge.title = params[:title].gsub('+',' ')
     @challenge.description = params[:description].gsub('+',' ')
     @challenge.price = params[:price]
-    @challenge.challenger_id = params[:user_id]
+    @challenge.challenger_id = params[:challenger_id]
     @challenge.save!
 
     render json: 1
