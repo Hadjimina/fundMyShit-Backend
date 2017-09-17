@@ -8,11 +8,13 @@ class PaymentsController < ApplicationController
 
     @payer = User.find_by_id(payer_id)
     @payer.update_attributes(balance: @payer.balance - @payment.amount )
-
+    @payer.save!
+    
     @challenge = Challenge.find_by_id(challenge_id)
 
     @challenger = User.find_by_id(payer_id)
     @challenger.update_attributes(balance: @challenger.balance + @payment.amount )
+    @challenger.save!
     render json: 1
   end
 end
