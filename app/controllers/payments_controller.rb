@@ -11,19 +11,19 @@ class PaymentsController < ApplicationController
     @payer.update_attributes(balance: ( @balance - @payment.amount) )
 
     50.times do
-       p **
+      p @payer
+      p @payer.balance
      end
 
-    p @payer
-    p @payer.balance
+
     @challenge = Challenge.find_by_id(challenge_id)
     @challenger = User.find_by_id(@challenge.challenger.id)
 
-    50.times do 
-      p **
+    50.times do
+      p @challenger
+      p @challenger.balance
     end
-    p @challenger
-    p @challenger.balance
+
     @balance_2 = @challenger.balance
     @challenger.update_attributes(balance: (@balance + @payment.amount) )
     render json: 1
