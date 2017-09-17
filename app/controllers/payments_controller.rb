@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
     @payment.payer_id = params[:payer_id]
     @payment.save!
 
-    @payer = User.find_by_id(payer_id)
+    @payer = User.find_by_id(params[:payer_id])
     @balance_1 = @payer.balance
     @payer.update_attributes(balance: ( @balance - @payment.amount) )
 
@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
      end
 
 
-    @challenge = Challenge.find_by_id(challenge_id)
+    @challenge = Challenge.find_by_id(params[:challenge_id])
     @challenger = User.find_by_id(@challenge.challenger.id)
 
     50.times do
