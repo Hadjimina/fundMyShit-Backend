@@ -10,7 +10,7 @@ class ChallengesController < ApplicationController
     end
 
 
-    render json: @challenges.reverse
+    render json: @challenges
   end
 
   def show
@@ -58,7 +58,7 @@ class ChallengesController < ApplicationController
       # @challenges =  @challenges.sort_by { |a| a.complete ? 0 : 1 }
 
 
-      render json: @challenges.reverse
+      render json: @challenges
 
   end
 
